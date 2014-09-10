@@ -1,5 +1,5 @@
 <?php
-$rotas=['1' =>'home','2' => 'empresa','3'=> 'produtos','4' => 'servicos','5' => 'contato'];
+$rotas=['1' =>'home','2' => 'empresa','3'=> 'produtos','4' => 'servicos','5' => 'contato','6' => 'recebecontato'];
 $rota= parse_url("http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 
 $path = explode("/",$rota['path']);

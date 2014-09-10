@@ -36,7 +36,7 @@ $sql[]="INSERT INTO `conteudo` VALUES ('1', '1', 'Você está na home do site, o
 $sql[]="INSERT INTO `conteudo` VALUES ('2', '2', 'Empresa com 10 anos de experiência em desenvolvimento de sistema online.');";
 $sql[]="INSERT INTO `conteudo` VALUES ('3', '3', 'Desenvolvimento de sistemas online');";
 $sql[]="INSERT INTO `conteudo` VALUES ('4', '4', 'Consultoria\\n Planejamento\\n Criação\\n Desenvolvimento');";
-$sql[]="INSERT INTO `conteudo` VALUES ('5', '5', 'Entre em contato no e-mail: teste@teste.com.br');";
+$sql[]="INSERT INTO `conteudo` VALUES ('5', '5', 'Entre em contato no e-mail: teste@teste.com.br ou preencha o formulário abaixo');";
 
 
 

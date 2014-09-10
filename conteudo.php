@@ -37,6 +37,15 @@
     <h1><?php echo ucfirst(str_replace('cos','ços',$resultado['SITE_MENU'])) ; ?></h1> <br />
     <?php
     echo str_replace('\n','<br>',$resultado['CONTEUDO']);
+
+        if($id==5){
+            require_once('contato.php');
+        }
+
+        if($id==6){
+            require_once('recebecontato.php');
+        }
+
     }
     else{
         Pesquisa($conexao, $_POST['pesquisar'], $server);
