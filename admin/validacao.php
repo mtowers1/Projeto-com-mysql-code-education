@@ -13,7 +13,7 @@ $arquivo="";
 if(!isset($_POST['pesquisar'])){
     if($arquivo==""){
         $arquivo="login";
-    }
+	}
 
        
     foreach($rotas as $r=>$v){

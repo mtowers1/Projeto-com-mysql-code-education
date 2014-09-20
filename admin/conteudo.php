@@ -3,6 +3,8 @@ if(!isset($_SESSION["logado"]) && $_SESSION["logado"] != "m123456"){
     session_destroy();
     header("Location:".$server."admin/login");
     exit();
+}else if($arquivo=="login"){
+	$id=1;
 }
 ?>
 <nav class="navbar navbar-default" role="navigation">
@@ -34,6 +36,7 @@ if(!isset($_SESSION["logado"]) && $_SESSION["logado"] != "m123456"){
 </nav>
 <?php if(isset($erro) && $erro !=""){ echo '<div class="alert alert-success" role="alert">'.$erro.'</div>';}?>
 <?php
+
 $resultado=BuscaConteudo($conexao,$id);
 ?>
 <form name="comecar" id="comecar" method="POST" action="">

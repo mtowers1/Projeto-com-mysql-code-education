@@ -7,6 +7,7 @@ require_once "validacao.php";
 require_once "../topo.php";
 if(isset($_POST["login"]) && isset($_POST["senha"])){
     $erro=ValidaLogin($_POST["login"],$_POST["senha"], $conexao);
+	
 }
 if(isset($_POST["editor"]) && $_POST["editor"]!="" && isset($_SESSION["logado"])){
     $erro=AtualizaConteudo($_POST["editor"],$_POST["id"], $conexao);

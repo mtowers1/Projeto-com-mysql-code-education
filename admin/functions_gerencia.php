@@ -12,7 +12,7 @@ function ValidaLogin($login, $senha , $conexao){
         $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
         if(VerificaSenha($senha, $resultado['SENHA'])){
              $_SESSION['logado']="m123456";
-        }
+		}
         else{
             $erro="Login Inválido";
             return $erro;
