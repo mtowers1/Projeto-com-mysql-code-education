@@ -4,7 +4,7 @@ $rota= parse_url("http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 
 $path = explode("/",$rota['path']);
 $server="http://".$_SERVER['HTTP_HOST']."/";
-if(isset($path[2])){
+if(isset($path[1])){
 $arquivo=strtolower($path[1]);
 }
 else{
