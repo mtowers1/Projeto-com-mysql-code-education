@@ -1,5 +1,5 @@
 <?php
-function ListaMenu($conexao,$server){
+function ListaMenu($conexao, $server, $pasta=""){
     $sql="SELECT * FROM menu ORDER BY SITE_ORDEM";
     $stmt= $conexao->prepare($sql);
     $stmt->execute();
@@ -7,15 +7,14 @@ function ListaMenu($conexao,$server){
     $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     foreach($resultado as $res){
-        $menu.= MontaMenu($res['SITE_MENU'],$server);
+        $menu.= MontaMenu($res['SITE_MENU'],$server, $pasta);
     }
 
    return $menu;
 }
 
-function MontaMenu($menu,$server){
-
-    $menu_m= "<li><a href='".$server.strtolower($menu)."'>".ucfirst(str_replace('cos','ços',$menu))."</a></li>";
+function MontaMenu($menu, $server, $pasta=""){
+    $menu_m= "<li><a href='".$server.$pasta.strtolower($menu)."'>".ucfirst(str_replace('cos','ços',$menu))."</a></li>";
     return $menu_m;
 }
 
@@ -48,12 +47,13 @@ function Pesquisa($conexao, $palavra, $server){
 
            if($total > 0){
             $menu="<ul>";
-           $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             foreach($resultado as $res){
-                $menu.= MontaMenu($res['SITE_MENU'],$server).substr(str_replace('\n','<br />',$res['CONTEUDO']),0,28).'...<br /><br />';
+
+                $menu.= MontaMenu($res['SITE_MENU'], $server, "").substr(strip_tags($res['CONTEUDO']),0,300).'...<br /><br />';
             }
-        $menu.="</ul>";
+              $menu.="</ul>";
             echo $menu;
 
            }

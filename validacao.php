@@ -9,7 +9,13 @@ if(!isset($_POST['pesquisar'])){
     if($arquivo==""){
         $arquivo="home";
     }
-
+	
+	
+    if($arquivo=="admin"){
+        header("Location:".$server."admin/");
+        exit();
+    }
+	
     foreach($rotas as $r=>$v){
 
         if($v==$arquivo){
