@@ -4,7 +4,12 @@ $rota= parse_url("http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 
 $path = explode("/",$rota['path']);
 $server="http://".$_SERVER['HTTP_HOST']."/";
+if(isset($path[2])){
 $arquivo=strtolower($path[2]);
+}
+else{
+$arquivo="";	
+}
 if(!isset($_POST['pesquisar'])){
     if($arquivo==""){
         $arquivo="login";
