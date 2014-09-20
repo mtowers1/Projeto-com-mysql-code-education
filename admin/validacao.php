@@ -10,6 +10,11 @@ $arquivo=strtolower($path[2]);
 else{
 $arquivo="";	
 }
+if($arquivo=="sair"){
+    $arquivo="";
+    session_destroy();
+    header("Location:".$server."admin/login");
+}
 if(!isset($_POST['pesquisar'])){
     if($arquivo==""){
         $arquivo="login";

@@ -10,6 +10,10 @@ function ListaMenu($conexao, $server, $pasta=""){
         $menu.= MontaMenu($res['SITE_MENU'],$server, $pasta);
     }
 
+    if($pasta !=""){
+        $menu.="<li><a href='".$server.$pasta."sair'>Sair</a></li>";
+    }
+
    return $menu;
 }
 
